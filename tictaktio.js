@@ -1,10 +1,19 @@
+//Acces Button,strike
 let boxes = document.querySelectorAll(".box");
 let msg = document.querySelector("#msg");
 let msgconttainer = document.querySelector(".msg-container");
 let restbtn = document.querySelector("#reset-btn");
 let newbtn = document.querySelector("#new-btn");
 let strike = document.querySelector("#strike");
-let player = true;
+let foro = document.querySelector("#forO");
+let forx = document.querySelector("#forX")
+// declaration of player variable
+let player;
+//disable all box button 
+for(box of boxes){
+    box.disabled = true;
+}
+//storing win pattern
 let winpattern = [
     [0,1,2],
     [3,4,5],
@@ -16,7 +25,7 @@ let winpattern = [
     [0,4,8]
 ]
 
-
+// winner function
 function winner(win){
     let count1 = 0;
     for(let win of winpattern){
@@ -73,12 +82,9 @@ function winner(win){
         msg.innerText = `Match is tie`;
         msgconttainer.classList.remove("hide");
     }
-    // for(win of winpattern){
-    //     console.log(win[1]);
-    // }
 }
 
-
+//Adding event in box button
 for(let btn of boxes){
     btn.addEventListener("click",()=>{
         if(player){
@@ -92,28 +98,46 @@ for(let btn of boxes){
             player = true;
         }
         winner();
-        // count++;
-        // if(count===9 && !success){
-        //     msg.innerText = `Match is tie`;
-        //     msgconttainer.classList.remove("hide");
-
-        // }
     })
 }
 
 
 
-
+//It is a function used in reset & new Button
 function btnimplement(){
         for(btn of boxes){
             btn.innerText = "";
             btn.disabled = false;
             strike.classList.add("hide");
         }
-        msgconttainer.classList.add("hide")
+        msgconttainer.classList.add("hide");
+        player = "";
+        for(box2 of boxes){
+            box2.disabled = true;
+        }
+        foro.disabled = false;
+        forx.disabled = false;
 }
 restbtn.addEventListener("click",()=>{
     btnimplement();
 })
 
 newbtn.addEventListener("click",btnimplement)
+
+//Adding event for "O" Button
+foro.addEventListener("click",()=>{
+    player = true;
+    forx.disabled = true;
+    for(btn1 of boxes){
+        btn1.disabled = false;
+    }
+})
+
+//Adding event for "X" Button
+forx.addEventListener("click",()=>{
+    player = false;
+    foro.disabled = true;
+    for(btn2 of boxes){
+        btn2.disabled = false;
+    }
+})
