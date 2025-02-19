@@ -1,18 +1,25 @@
 * {
     margin: 0;
     padding: 0;
-  }
+  } 
   
   body {
-    background-color: #ecca7a;
+    background-color: #A0E7E5;
     text-align: center;
+    /* font-family:'Poppins', sans-serif; */
   }
   
   .container {
-    height: 70vh;
+    
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .heading{
+    color: #5f040a;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
   }
   
   .game {
@@ -23,77 +30,69 @@
     justify-content: center;
     align-items: center;
     gap: 1.5vmin;
-    position: relative;
   }
   
   .box {
     height: 18vmin;
     width: 18vmin;
     border-radius: 1rem;
-    border: 1px solid black;
+    border: none;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin;
-    color: #b0413e;
-    background-color: #dd9727;
+    background-color:#3d5b59 ;
     cursor: pointer;
   }
+  .box:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #FFD700;
+  }
   
+  
+  .R_N-Buttoncontainer{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
   #reset-btn {
     padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: #fff;
+    font-size: 1.1rem;
+    background-color: #9767da;
+    color: #FFFFFF;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
   }
-  #forO{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: #fff;
-    border-radius: 1rem;
-    border: none;
-    cursor: pointer;
-  }
-  #forX{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: #fff;
-    border-radius: 1rem;
-    border: none;
-    cursor: pointer;
+  #reset-btn:hover {
+    /* transform: scale(1.02);
+    box-shadow: 0 0 10px #042c54; */
+    background-color: #7731d8;
   }
   
-  #new-btn {
+  #new-btn{
     padding: 1rem;
-    font-size: 1.25rem;
-    background-color: #191913;
-    color: #fff;
+    font-size: 1.2rem;
+    background-color: #9767da;
+    color: #FFFFFF;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
+  }
+  #new-btn:hover{
+     transform: scale(1.02);
+    box-shadow: 0 0 10px #042c54;
+    background-color: #7731d8;
   }
   
   #msg {
-    color: #b0413e;
-    font-size: 5vmin;
+    color: #FFD700;
+    font-size: 1.4rem;
+    font-weight: 700;
   }
   
   .msg-container {
-    padding-top: 1%;
     display: flex;
     justify-content: center;
-    align-items: center; 
-  }
-
-  /* botton reset and new game butten*/
-  .showBtn{
-    display: flex;
-    gap: 2%;
-    justify-content: center;
-
+    align-items: center;
   }
   
   .hide {
@@ -115,59 +114,4 @@
   color: white;
   text-align: center;
 }
-.strike{
-  position: absolute;
-  background-color: rgb(88, 224, 9);
-}
-.strike-row-1{
-  width: 73%;
-  height: 5px;
-  top: 15%;
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-row-2{
-  width: 73%;
-  height: 5px;
-  top: 49%;
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-row-3{
-  width: 73%;
-  height: 5px;
-  top: 84%;
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-col-1{
-  height: 73%;
-  width: 5px;
-  left: 17%;
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-col-2{
-  height: 73%;
-  width: 5px;
-  left: 49.5%;
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-col-3{
-  height: 73%;
-  width: 5px;
-  left: 82%;
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-digonal-1{
-  height: 5px;
-  width: 75%;
-  top: 50%;
-  left: 13%;
-  transform: skewY(47deg);
-  /* margin: 0px 50px 0px 50px; */
-}
-.strike-digonal-2{
-  height: 5px;
-  width: 75%;
-  top: 50%;
-  left: 13%;
-  transform: skewY(-47deg);
-  /* margin: 0px 50px 0px 50px; */
-}
+
